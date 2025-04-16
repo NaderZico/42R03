@@ -74,13 +74,13 @@ int ft_printf(const char *format, ...)
     return len;
 }
 
-#include <stdio.h>
-int main(void)
-{
-    int len = 0;
-    len = ft_printf("Hexadecimal for %            d %d %s %x %d", -2147483648, -42, "hi", 0, 42);
-    ft_printf("\n%d", len);
-    printf("\n---------------------------\n");
-    len = printf("Hexadecimal for %           d %d %s %x %d", -2147483648, -42, "hi", 0, 42);
-    printf("\n%d\n", len);
-}
+// #include <stdio.h>
+// int main(void)
+// {
+//     int len = 0;
+//     len = ft_printf("Hexadecimal for %            d %d %s %x %d", -2147483648, -42, "hi", 0, 42);
+//     ft_printf("\n%d", len);
+//     printf("\n---------------------------\n");
+//     len = printf("Hexadecimal for %           d %d %s %x %d", -2147483648, -42, "hi", 0, 42);
+//     printf("\n%d\n", len);
+// }
