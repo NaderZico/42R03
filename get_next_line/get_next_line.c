@@ -9,9 +9,9 @@ char *get_next_line(int fd)
     if(fd < 0 || BUFFER_SIZE > INT_MAX || BUFFER_SIZE <= 0)
         return NULL;
     line = malloc(INT_MAX);
-    line[0] = '\0';
     if(!line)
         return NULL;
+    line[0] = '\0';
     while(read(fd, &c, 1) > 0)
     {
         line[i++] = c;
