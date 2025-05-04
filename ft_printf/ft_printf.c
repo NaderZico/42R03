@@ -35,7 +35,7 @@ void print_digit(int d, int *len)
 
 void print_hex(unsigned int h, int *len)
 {
-    if(h > 15)
+    if(h >= 16)
         print_hex(h / 16, len);
     write(1, &"0123456789abcdef"[h % 16], 1);
     (*len)++;
@@ -61,8 +61,6 @@ int ft_printf(const char *format, ...)
                 print_digit(va_arg(list, int), &len);
             else if(*format == 'x')
                 print_hex(va_arg(list, unsigned int), &len);
-            else if(*format == '\0')
-                return len;        
         }
         else
         {
