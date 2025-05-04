@@ -8,7 +8,8 @@ char *get_next_line(int fd)
 
     if(fd < 0 || BUFFER_SIZE > INT_MAX || BUFFER_SIZE <= 0)
         return NULL;
-    line = malloc(INT_MAX - 10000);
+    line = malloc(INT_MAX);
+    line[0] = '\0';
     if(!line)
         return NULL;
     while(read(fd, &c, 1) > 0)
@@ -18,7 +19,6 @@ char *get_next_line(int fd)
             break;
     }
     line[i] = '\0';
-    
     if(i == 0)
     {
         free(line);

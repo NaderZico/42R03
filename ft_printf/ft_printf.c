@@ -27,7 +27,7 @@ void print_digit(int d, int *len)
         d = -d;
         (*len)++;
     }
-    if(d > 9)
+    if(d >= 10)
         print_digit(d / 10, len);
     write(1, &"0123456789"[d % 10], 1);
     (*len)++;
@@ -71,6 +71,7 @@ int ft_printf(const char *format, ...)
         }
         format++;
     }
+    va_end(list);
     return len;
 }
 
